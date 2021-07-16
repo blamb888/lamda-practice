@@ -180,7 +180,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626432815795-2021-07-16T10:53:35.795Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626436581798-2021-07-16T11:56:21.798Z/lamda-practice.zip"
               },
               "Handler": "handler.SES",
               "Runtime": "nodejs12.x",
@@ -205,7 +205,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626432815795-2021-07-16T10:53:35.795Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626436581798-2021-07-16T11:56:21.798Z/lamda-practice.zip"
               },
               "Handler": "handler.roundTwo",
               "Runtime": "nodejs12.x",
@@ -223,24 +223,24 @@
               "RoundTwoLogGroup"
             ]
           },
-          "SESLambdaVersion3FYfZFsCZS3gC3Hshc3y5pAV5yVefiRLWuWE659rI": {
+          "SESLambdaVersionxhqIxbW54hvsi7koQSLbb41OSILfKEi1LWOjqPtE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "SESLambdaFunction"
               },
-              "CodeSha256": "/F7HGIgPMaplNbJW3nv+z0Qxg5kl2mEXuClkj5NuMgg="
+              "CodeSha256": "gZ+1DJ1y6TISC4HGsCc32D4ETlm/uISzbot89hw01V0="
             }
           },
-          "RoundTwoLambdaVersionHIo5RWgvuGg5qNitN0VilTDPZTFtaP7c2iuN4LUns": {
+          "RoundTwoLambdaVersionxxwE9pwA98ZrLbvd4hGLSZquDYeN9QEyF68sqQM23M": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "RoundTwoLambdaFunction"
               },
-              "CodeSha256": "/F7HGIgPMaplNbJW3nv+z0Qxg5kl2mEXuClkj5NuMgg="
+              "CodeSha256": "gZ+1DJ1y6TISC4HGsCc32D4ETlm/uISzbot89hw01V0="
             }
           },
           "HttpApi": {
@@ -420,7 +420,7 @@
           "SESLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SESLambdaVersion3FYfZFsCZS3gC3Hshc3y5pAV5yVefiRLWuWE659rI"
+              "Ref": "SESLambdaVersionxhqIxbW54hvsi7koQSLbb41OSILfKEi1LWOjqPtE"
             },
             "Export": {
               "Name": "sls-lamda-practice-dev-SESLambdaFunctionQualifiedArn"
@@ -429,7 +429,7 @@
           "RoundTwoLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "RoundTwoLambdaVersionHIo5RWgvuGg5qNitN0VilTDPZTFtaP7c2iuN4LUns"
+              "Ref": "RoundTwoLambdaVersionxxwE9pwA98ZrLbvd4hGLSZquDYeN9QEyF68sqQM23M"
             },
             "Export": {
               "Name": "sls-lamda-practice-dev-RoundTwoLambdaFunctionQualifiedArn"
@@ -577,7 +577,7 @@
         "memory": 128,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "SESLambdaVersion3FYfZFsCZS3gC3Hshc3y5pAV5yVefiRLWuWE659rI"
+        "versionLogicalId": "SESLambdaVersionxhqIxbW54hvsi7koQSLbb41OSILfKEi1LWOjqPtE"
       },
       "roundTwo": {
         "handler": "handler.roundTwo",
@@ -597,7 +597,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "RoundTwoLambdaVersionHIo5RWgvuGg5qNitN0VilTDPZTFtaP7c2iuN4LUns"
+        "versionLogicalId": "RoundTwoLambdaVersionxxwE9pwA98ZrLbvd4hGLSZquDYeN9QEyF68sqQM23M"
       }
     },
     "configValidationMode": "warn",
@@ -619,7 +619,7 @@
     "artifact": "/Users/brandon/code/lamda-practice/.serverless/lamda-practice.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/lamda-practice/dev/1626432815795-2021-07-16T10:53:35.795Z",
+    "artifactDirectoryName": "serverless/lamda-practice/dev/1626436581798-2021-07-16T11:56:21.798Z",
     "artifact": "lamda-practice.zip"
   }
 }

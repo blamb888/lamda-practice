@@ -300,6 +300,7 @@ const email_template =
 </html>`;
 // Load the AWS SDK for Node.js
 var AWS = require('aws-sdk');
+const SES = new AWS.SES({apiVersion: '2010-12-01'});
 // Set the region
 AWS.config.update({region: 'us-east-1'});
 
@@ -312,7 +313,7 @@ function sendEmailToCustomer(customer_email) {
         /* more items */
       ],
       ToAddresses: [
-        'blamb888@gmail.com',
+        customer_email,
         /* more items */
       ]
     },
@@ -403,7 +404,7 @@ function sendEmailToCustomer(customer_email) {
 
 // sendEmailToCustomer("brandon@flagship.cc");
 
-// module.exports = {
-//   sendEmailToCustomer
-// }
+module.exports = {
+  sendEmailToCustomer
+}
 

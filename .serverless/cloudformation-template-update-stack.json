@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lamda-practice/dev/1626449408656-2021-07-16T15:30:08.656Z/lamda-practice.zip"
+          "S3Key": "serverless/lamda-practice/dev/1626449478427-2021-07-16T15:31:18.427Z/lamda-practice.zip"
         },
         "Handler": "handler.SES",
         "Runtime": "nodejs12.x",
@@ -192,7 +192,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lamda-practice/dev/1626449408656-2021-07-16T15:30:08.656Z/lamda-practice.zip"
+          "S3Key": "serverless/lamda-practice/dev/1626449478427-2021-07-16T15:31:18.427Z/lamda-practice.zip"
         },
         "Handler": "handler.roundTwo",
         "Runtime": "nodejs12.x",

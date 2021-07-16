@@ -1,6 +1,12 @@
 'use strict';
+const {
+  sendEmailToCustomer
+} = require('./ses');
 
 module.exports.hello = async (event) => {
+
+  sendEmailToCustomer('brandon@flagship.cc');
+
   return {
     statusCode: 200,
     body: JSON.stringify(

@@ -90,12 +90,6 @@
               "LogGroupName": "/aws/lambda/lamda-practice-dev-SES"
             }
           },
-          "RoundTwoLogGroup": {
-            "Type": "AWS::Logs::LogGroup",
-            "Properties": {
-              "LogGroupName": "/aws/lambda/lamda-practice-dev-roundTwo"
-            }
-          },
           "IamRoleLambdaExecution": {
             "Type": "AWS::IAM::Role",
             "Properties": {
@@ -180,13 +174,13 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626449478427-2021-07-16T15:31:18.427Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626451647804-2021-07-16T16:07:27.804Z/lamda-practice.zip"
               },
               "Handler": "handler.SES",
               "Runtime": "nodejs12.x",
               "FunctionName": "lamda-practice-dev-SES",
-              "MemorySize": 128,
-              "Timeout": 20,
+              "MemorySize": 1024,
+              "Timeout": 6,
               "Role": {
                 "Fn::GetAtt": [
                   "IamRoleLambdaExecution",
@@ -198,47 +192,12 @@
               "SESLogGroup"
             ]
           },
-          "RoundTwoLambdaFunction": {
-            "Type": "AWS::Lambda::Function",
-            "Properties": {
-              "Code": {
-                "S3Bucket": {
-                  "Ref": "ServerlessDeploymentBucket"
-                },
-                "S3Key": "serverless/lamda-practice/dev/1626449478427-2021-07-16T15:31:18.427Z/lamda-practice.zip"
-              },
-              "Handler": "handler.roundTwo",
-              "Runtime": "nodejs12.x",
-              "FunctionName": "lamda-practice-dev-roundTwo",
-              "MemorySize": 1024,
-              "Timeout": 6,
-              "Role": {
-                "Fn::GetAtt": [
-                  "IamRoleLambdaExecution",
-                  "Arn"
-                ]
-              }
-            },
-            "DependsOn": [
-              "RoundTwoLogGroup"
-            ]
-          },
-          "SESLambdaVersionm8z7OvhezH6EkvZWOTYm8JcxuJAiwLiGcXnNutNuU": {
+          "SESLambdaVersionagGT8E4O42JxUtxhhcyjPqxiJGuCugKgXKCyWjLNA": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "SESLambdaFunction"
-              },
-              "CodeSha256": "sTe1xnj0Isvu8I7kIKjhrJNGjhP0zqmPMsFfBepl7gY="
-            }
-          },
-          "RoundTwoLambdaVersion07HpQBY7whtT7cXBnPobnqwgRhvA3ijvbaQNMoaLiI": {
-            "Type": "AWS::Lambda::Version",
-            "DeletionPolicy": "Retain",
-            "Properties": {
-              "FunctionName": {
-                "Ref": "RoundTwoLambdaFunction"
               },
               "CodeSha256": "sTe1xnj0Isvu8I7kIKjhrJNGjhP0zqmPMsFfBepl7gY="
             }
@@ -311,7 +270,7 @@
                 "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"SESLambdaPermissionHttpApi\"][\"Properties\"][\"FunctionName\"]"
               },
               "PayloadFormatVersion": "2.0",
-              "TimeoutInMillis": 20500
+              "TimeoutInMillis": 6500
             }
           },
           "HttpApiRouteGet": {
@@ -334,78 +293,6 @@
               }
             },
             "DependsOn": "HttpApiIntegrationSES"
-          },
-          "RoundTwoLambdaPermissionHttpApi": {
-            "Type": "AWS::Lambda::Permission",
-            "Properties": {
-              "FunctionName": {
-                "Fn::GetAtt": [
-                  "RoundTwoLambdaFunction",
-                  "Arn"
-                ]
-              },
-              "Action": "lambda:InvokeFunction",
-              "Principal": "apigateway.amazonaws.com",
-              "SourceArn": {
-                "Fn::Join": [
-                  "",
-                  [
-                    "arn:",
-                    {
-                      "Ref": "AWS::Partition"
-                    },
-                    ":execute-api:",
-                    {
-                      "Ref": "AWS::Region"
-                    },
-                    ":",
-                    {
-                      "Ref": "AWS::AccountId"
-                    },
-                    ":",
-                    {
-                      "Ref": "HttpApi"
-                    },
-                    "/*"
-                  ]
-                ]
-              }
-            }
-          },
-          "HttpApiIntegrationRoundTwo": {
-            "Type": "AWS::ApiGatewayV2::Integration",
-            "Properties": {
-              "ApiId": {
-                "Ref": "HttpApi"
-              },
-              "IntegrationType": "AWS_PROXY",
-              "IntegrationUri": {
-                "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"RoundTwoLambdaPermissionHttpApi\"][\"Properties\"][\"FunctionName\"]"
-              },
-              "PayloadFormatVersion": "2.0",
-              "TimeoutInMillis": 6500
-            }
-          },
-          "HttpApiRouteGetRoundtwo": {
-            "Type": "AWS::ApiGatewayV2::Route",
-            "Properties": {
-              "ApiId": {
-                "Ref": "HttpApi"
-              },
-              "RouteKey": "GET /roundTwo",
-              "Target": {
-                "Fn::Join": [
-                  "/",
-                  [
-                    "integrations",
-                    {
-                      "Ref": "HttpApiIntegrationRoundTwo"
-                    }
-                  ]
-                ]
-              }
-            },
-            "DependsOn": "HttpApiIntegrationRoundTwo"
           }
         },
         "Outputs": {
@@ -420,19 +307,10 @@
           "SESLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SESLambdaVersionm8z7OvhezH6EkvZWOTYm8JcxuJAiwLiGcXnNutNuU"
+              "Ref": "SESLambdaVersionagGT8E4O42JxUtxhhcyjPqxiJGuCugKgXKCyWjLNA"
             },
             "Export": {
               "Name": "sls-lamda-practice-dev-SESLambdaFunctionQualifiedArn"
-            }
-          },
-          "RoundTwoLambdaFunctionQualifiedArn": {
-            "Description": "Current Lambda function version",
-            "Value": {
-              "Ref": "RoundTwoLambdaVersion07HpQBY7whtT7cXBnPobnqwgRhvA3ijvbaQNMoaLiI"
-            },
-            "Export": {
-              "Name": "sls-lamda-practice-dev-RoundTwoLambdaFunctionQualifiedArn"
             }
           },
           "HttpApiId": {
@@ -559,8 +437,6 @@
     "functions": {
       "SES": {
         "handler": "handler.SES",
-        "timeout": 20,
-        "memorySize": 128,
         "events": [
           {
             "httpApi": {
@@ -573,30 +449,11 @@
         ],
         "name": "lamda-practice-dev-SES",
         "package": {},
-        "memory": 128,
-        "runtime": "nodejs12.x",
-        "vpc": {},
-        "versionLogicalId": "SESLambdaVersionm8z7OvhezH6EkvZWOTYm8JcxuJAiwLiGcXnNutNuU"
-      },
-      "roundTwo": {
-        "handler": "handler.roundTwo",
-        "events": [
-          {
-            "httpApi": {
-              "path": "/roundTwo",
-              "method": "get"
-            },
-            "resolvedMethod": "GET",
-            "resolvedPath": "/roundTwo"
-          }
-        ],
-        "name": "lamda-practice-dev-roundTwo",
-        "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "RoundTwoLambdaVersion07HpQBY7whtT7cXBnPobnqwgRhvA3ijvbaQNMoaLiI"
+        "versionLogicalId": "SESLambdaVersionagGT8E4O42JxUtxhhcyjPqxiJGuCugKgXKCyWjLNA"
       }
     },
     "configValidationMode": "warn",
@@ -618,7 +475,7 @@
     "artifact": "/Users/brandon/code/lamda-practice/.serverless/lamda-practice.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/lamda-practice/dev/1626449478427-2021-07-16T15:31:18.427Z",
+    "artifactDirectoryName": "serverless/lamda-practice/dev/1626451647804-2021-07-16T16:07:27.804Z",
     "artifact": "lamda-practice.zip"
   }
 }

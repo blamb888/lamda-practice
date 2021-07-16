@@ -13,15 +13,13 @@ provider:
 functions:
   SES:
     handler: handler.SES
-    timeout: 20
-    memorySize: 128
     events:
       - httpApi:
           path: /
           method: get
-  roundTwo:
-    handler: handler.roundTwo
-    events:
-      - httpApi:
-          path: /roundTwo
-          method: get
+  # roundTwo:
+  #   handler: handler.roundTwo
+  #   events:
+  #     - httpApi:
+  #         path: /roundTwo
+  #         method: get

@@ -71,10 +71,10 @@
         }
       }
     },
-    "HelloLogGroup": {
+    "SESLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/lamda-practice-dev-hello"
+        "LogGroupName": "/aws/lambda/lamda-practice-dev-SES"
       }
     },
     "RoundTwoLogGroup": {
@@ -160,20 +160,20 @@
         }
       }
     },
-    "HelloLambdaFunction": {
+    "SESLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lamda-practice/dev/1626423093713-2021-07-16T08:11:33.713Z/lamda-practice.zip"
+          "S3Key": "serverless/lamda-practice/dev/1626432815795-2021-07-16T10:53:35.795Z/lamda-practice.zip"
         },
-        "Handler": "handler.hello",
+        "Handler": "handler.SES",
         "Runtime": "nodejs12.x",
-        "FunctionName": "lamda-practice-dev-hello",
-        "MemorySize": 1024,
-        "Timeout": 6,
+        "FunctionName": "lamda-practice-dev-SES",
+        "MemorySize": 128,
+        "Timeout": 30,
         "Role": {
           "Fn::GetAtt": [
             "IamRoleLambdaExecution",
@@ -182,7 +182,7 @@
         }
       },
       "DependsOn": [
-        "HelloLogGroup"
+        "SESLogGroup"
       ]
     },
     "RoundTwoLambdaFunction": {
@@ -192,7 +192,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lamda-practice/dev/1626423093713-2021-07-16T08:11:33.713Z/lamda-practice.zip"
+          "S3Key": "serverless/lamda-practice/dev/1626432815795-2021-07-16T10:53:35.795Z/lamda-practice.zip"
         },
         "Handler": "handler.roundTwo",
         "Runtime": "nodejs12.x",
@@ -210,24 +210,24 @@
         "RoundTwoLogGroup"
       ]
     },
-    "HelloLambdaVersionpzOXyCY903996orHrZsYyK1LQZMzc5m4ueuGJca7sw": {
+    "SESLambdaVersion3FYfZFsCZS3gC3Hshc3y5pAV5yVefiRLWuWE659rI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "HelloLambdaFunction"
+          "Ref": "SESLambdaFunction"
         },
-        "CodeSha256": "/XGI90sFOlfrLcWBiuSMWR5tUO2OE+fhcr0NOheVE0g="
+        "CodeSha256": "/F7HGIgPMaplNbJW3nv+z0Qxg5kl2mEXuClkj5NuMgg="
       }
     },
-    "RoundTwoLambdaVersionw9k7xngjCEy9T9OASoJT8m2UJ66Q0PYEkhFibTzsaw": {
+    "RoundTwoLambdaVersionHIo5RWgvuGg5qNitN0VilTDPZTFtaP7c2iuN4LUns": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "RoundTwoLambdaFunction"
         },
-        "CodeSha256": "/XGI90sFOlfrLcWBiuSMWR5tUO2OE+fhcr0NOheVE0g="
+        "CodeSha256": "/F7HGIgPMaplNbJW3nv+z0Qxg5kl2mEXuClkj5NuMgg="
       }
     },
     "HttpApi": {
@@ -250,12 +250,12 @@
         }
       }
     },
-    "HelloLambdaPermissionHttpApi": {
+    "SESLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "HelloLambdaFunction",
+            "SESLambdaFunction",
             "Arn"
           ]
         },
@@ -287,7 +287,7 @@
         }
       }
     },
-    "HttpApiIntegrationHello": {
+    "HttpApiIntegrationSES": {
       "Type": "AWS::ApiGatewayV2::Integration",
       "Properties": {
         "ApiId": {
@@ -296,12 +296,12 @@
         "IntegrationType": "AWS_PROXY",
         "IntegrationUri": {
           "Fn::GetAtt": [
-            "HelloLambdaFunction",
+            "SESLambdaFunction",
             "Arn"
           ]
         },
         "PayloadFormatVersion": "2.0",
-        "TimeoutInMillis": 6500
+        "TimeoutInMillis": 29000
       }
     },
     "HttpApiRouteGet": {
@@ -317,13 +317,13 @@
             [
               "integrations",
               {
-                "Ref": "HttpApiIntegrationHello"
+                "Ref": "HttpApiIntegrationSES"
               }
             ]
           ]
         }
       },
-      "DependsOn": "HttpApiIntegrationHello"
+      "DependsOn": "HttpApiIntegrationSES"
     },
     "RoundTwoLambdaPermissionHttpApi": {
       "Type": "AWS::Lambda::Permission",
@@ -410,19 +410,19 @@
         "Name": "sls-lamda-practice-dev-ServerlessDeploymentBucketName"
       }
     },
-    "HelloLambdaFunctionQualifiedArn": {
+    "SESLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionpzOXyCY903996orHrZsYyK1LQZMzc5m4ueuGJca7sw"
+        "Ref": "SESLambdaVersion3FYfZFsCZS3gC3Hshc3y5pAV5yVefiRLWuWE659rI"
       },
       "Export": {
-        "Name": "sls-lamda-practice-dev-HelloLambdaFunctionQualifiedArn"
+        "Name": "sls-lamda-practice-dev-SESLambdaFunctionQualifiedArn"
       }
     },
     "RoundTwoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "RoundTwoLambdaVersionw9k7xngjCEy9T9OASoJT8m2UJ66Q0PYEkhFibTzsaw"
+        "Ref": "RoundTwoLambdaVersionHIo5RWgvuGg5qNitN0VilTDPZTFtaP7c2iuN4LUns"
       },
       "Export": {
         "Name": "sls-lamda-practice-dev-RoundTwoLambdaFunctionQualifiedArn"

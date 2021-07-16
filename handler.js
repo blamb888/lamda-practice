@@ -1,21 +1,23 @@
 'use strict';
+require('dotenv').config();
+const aws = require('aws-sdk');
+const ses = new aws.SES();
+
 const {
   sendEmailToCustomer
 } = require('./ses');
 
-module.exports.hello = async (event) => {
+module.exports.SES = async (event) => {
   console.log("Sending Email to customer: ")
   sendEmailToCustomer('brandon@flagship.cc');
 
   return {
     statusCode: 200,
+    headers: { "Access-Control-Allow-Origin": "*" },
     body: JSON.stringify(
       {
-        message: 'Hello world!',
-        input: event,
-      },
-      null,
-      2
+        message: 'Hopefully this sent an email',
+      }, null,2
     ),
   };
 };

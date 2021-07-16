@@ -1,7 +1,7 @@
 'use strict';
 require('dotenv').config();
-const aws = require('aws-sdk');
-const ses = new aws.SES();
+// const aws = require('aws-sdk');
+// const ses = new aws.SES();
 
 const {
   sendEmailToCustomer

@@ -3,12 +3,12 @@ const AWS = require('aws-sdk');
 const SES = new AWS.SES({apiVersion: '2010-12-01'});
 AWS.config.update({region: 'us-east-1'});
 
-const SES_FROM_EMAIL_ADDRESS = "brandon+from@flagship.cc";
-// const customer_email = "brandon@flagship.cc";
-const email_template = "<h1>Hello there!</h1>";
 
-function sendEmailToCustomer(customer_email) {
+const sendEmailToCustomer = async(customer_email) => {
 
+    const SES_FROM_EMAIL_ADDRESS = "brandon+from@flagship.cc";
+    // const customer_email = "brandon@flagship.cc";
+    const email_template = "<h1>Hello there!</h1>";
     console.log("This is the FROM email: " + SES_FROM_EMAIL_ADDRESS);
     console.log("This is the TO email: " + customer_email);
 

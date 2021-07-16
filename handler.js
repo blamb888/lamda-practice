@@ -1,7 +1,8 @@
 'use strict';
 require('dotenv').config();
-// const aws = require('aws-sdk');
-// const ses = new aws.SES();
+const AWS = require('aws-sdk');
+const SES = new AWS.SES({apiVersion: '2010-12-01'});
+AWS.config.update({region: 'us-east-1'});
 
 const {
   sendEmailToCustomer
@@ -11,6 +12,7 @@ module.exports.SES = async (event) => {
   const simpleService = sendEmailToCustomer('brandon@flagship.cc');
 
   console.log("Simple service ran and returned this: " + simpleService);
+  console.log("This was the event: " + event);
 
   return {
     statusCode: 200,
@@ -23,15 +25,15 @@ module.exports.SES = async (event) => {
   };
 };
 
-module.exports.roundTwo = async (event) => {
-  return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: 'This is my first AWS lambda function written in Nodejs.',
-      },
-      null,
-      2
-    ),
-  };
-};
+// module.exports.roundTwo = async (event) => {
+//   return {
+//     statusCode: 200,
+//     body: JSON.stringify(
+//       {
+//         message: 'This is my first AWS lambda function written in Nodejs.',
+//       },
+//       null,
+//       2
+//     ),
+//   };
+// };

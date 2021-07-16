@@ -2,6 +2,6 @@
 node_modules
 jspm_packages
 config.json
-
+.env.yml
 # Serverless directories
 .serverless

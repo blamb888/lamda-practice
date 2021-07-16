@@ -13,7 +13,7 @@ provider:
 functions:
   SES:
     handler: handler.SES
-    timeout: 30
+    timeout: 20
     memorySize: 128
     events:
       - httpApi:

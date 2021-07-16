@@ -180,7 +180,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626445198524-2021-07-16T14:19:58.524Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626445475178-2021-07-16T14:24:35.178Z/lamda-practice.zip"
               },
               "Handler": "handler.SES",
               "Runtime": "nodejs12.x",
@@ -205,7 +205,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626445198524-2021-07-16T14:19:58.524Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626445475178-2021-07-16T14:24:35.178Z/lamda-practice.zip"
               },
               "Handler": "handler.roundTwo",
               "Runtime": "nodejs12.x",
@@ -565,7 +565,8 @@
           {
             "httpApi": {
               "path": "/",
-              "method": "get"
+              "method": "get",
+              "cors": true
             },
             "resolvedMethod": "GET",
             "resolvedPath": "/"
@@ -618,7 +619,7 @@
     "artifact": "/Users/brandon/code/lamda-practice/.serverless/lamda-practice.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/lamda-practice/dev/1626445198524-2021-07-16T14:19:58.524Z",
+    "artifactDirectoryName": "serverless/lamda-practice/dev/1626445475178-2021-07-16T14:24:35.178Z",
     "artifact": "lamda-practice.zip"
   }
 }

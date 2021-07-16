@@ -19,7 +19,6 @@ functions:
       - httpApi:
           path: /
           method: get
-          cors: true
   roundTwo:
     handler: handler.roundTwo
     events:

@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lamda-practice/dev/1626448217772-2021-07-16T15:10:17.772Z/lamda-practice.zip"
+          "S3Key": "serverless/lamda-practice/dev/1626449408656-2021-07-16T15:30:08.656Z/lamda-practice.zip"
         },
         "Handler": "handler.SES",
         "Runtime": "nodejs12.x",
@@ -192,7 +192,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/lamda-practice/dev/1626448217772-2021-07-16T15:10:17.772Z/lamda-practice.zip"
+          "S3Key": "serverless/lamda-practice/dev/1626449408656-2021-07-16T15:30:08.656Z/lamda-practice.zip"
         },
         "Handler": "handler.roundTwo",
         "Runtime": "nodejs12.x",
@@ -210,24 +210,24 @@
         "RoundTwoLogGroup"
       ]
     },
-    "SESLambdaVersionimDGlCG6FQE9YtjESHPyp1MnW6f6JiQ5VamdnuOh8": {
+    "SESLambdaVersionm8z7OvhezH6EkvZWOTYm8JcxuJAiwLiGcXnNutNuU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SESLambdaFunction"
         },
-        "CodeSha256": "UV3bHhAI9lMWjGZ7reRLDMXAiPgowWk+lADnmfMwHyY="
+        "CodeSha256": "sTe1xnj0Isvu8I7kIKjhrJNGjhP0zqmPMsFfBepl7gY="
       }
     },
-    "RoundTwoLambdaVersion8avDCr5N2lVVcaxhAXU9Xh7qf3Nq4sguLmroc4": {
+    "RoundTwoLambdaVersion07HpQBY7whtT7cXBnPobnqwgRhvA3ijvbaQNMoaLiI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "RoundTwoLambdaFunction"
         },
-        "CodeSha256": "UV3bHhAI9lMWjGZ7reRLDMXAiPgowWk+lADnmfMwHyY="
+        "CodeSha256": "sTe1xnj0Isvu8I7kIKjhrJNGjhP0zqmPMsFfBepl7gY="
       }
     },
     "HttpApi": {
@@ -413,7 +413,7 @@
     "SESLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SESLambdaVersionimDGlCG6FQE9YtjESHPyp1MnW6f6JiQ5VamdnuOh8"
+        "Ref": "SESLambdaVersionm8z7OvhezH6EkvZWOTYm8JcxuJAiwLiGcXnNutNuU"
       },
       "Export": {
         "Name": "sls-lamda-practice-dev-SESLambdaFunctionQualifiedArn"
@@ -422,7 +422,7 @@
     "RoundTwoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "RoundTwoLambdaVersion8avDCr5N2lVVcaxhAXU9Xh7qf3Nq4sguLmroc4"
+        "Ref": "RoundTwoLambdaVersion07HpQBY7whtT7cXBnPobnqwgRhvA3ijvbaQNMoaLiI"
       },
       "Export": {
         "Name": "sls-lamda-practice-dev-RoundTwoLambdaFunctionQualifiedArn"

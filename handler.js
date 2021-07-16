@@ -4,7 +4,7 @@ const {
 } = require('./ses');
 
 module.exports.hello = async (event) => {
-
+  console.log("Sending Email to customer: ")
   sendEmailToCustomer('brandon@flagship.cc');
 
   return {

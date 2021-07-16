@@ -33,7 +33,7 @@ function sendEmailToCustomer(customer_email) {
     console.log(emailParams)
 
     const sendPromise =  SES.sendEmail(emailParams).promise();
-    console.log(promise);
+    console.log(sendPromise);
 
     sendPromise.then(
       function(data) {

@@ -7,7 +7,7 @@ const SES_FROM_EMAIL_ADDRESS = "brandon+from@flagship.cc";
 // const customer_email = "brandon@flagship.cc";
 const email_template = "<h1>Hello there!</h1>";
 
-function sendEmailToCustomer(customer_email) {
+const sendEmailToCustomer = (customer_email) => {
 
     console.log("This is the FROM email: " + SES_FROM_EMAIL_ADDRESS);
     console.log("This is the TO email: " + customer_email);
@@ -37,7 +37,7 @@ function sendEmailToCustomer(customer_email) {
 
     console.log(emailParams)
 
-    const sendPromise =  new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(emailParams).promise();
+    const sendPromise = await new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(emailParams).promise();
     console.log(sendPromise);
 
     sendPromise.then(

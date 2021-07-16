@@ -180,13 +180,13 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626445475178-2021-07-16T14:24:35.178Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626445618658-2021-07-16T14:26:58.658Z/lamda-practice.zip"
               },
               "Handler": "handler.SES",
               "Runtime": "nodejs12.x",
               "FunctionName": "lamda-practice-dev-SES",
               "MemorySize": 128,
-              "Timeout": 30,
+              "Timeout": 20,
               "Role": {
                 "Fn::GetAtt": [
                   "IamRoleLambdaExecution",
@@ -205,7 +205,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626445475178-2021-07-16T14:24:35.178Z/lamda-practice.zip"
+                "S3Key": "serverless/lamda-practice/dev/1626445618658-2021-07-16T14:26:58.658Z/lamda-practice.zip"
               },
               "Handler": "handler.roundTwo",
               "Runtime": "nodejs12.x",
@@ -223,7 +223,7 @@
               "RoundTwoLogGroup"
             ]
           },
-          "SESLambdaVersionw8tsavjPRHttAQq7STANVZD1PiB49NzehfXqlZy73s": {
+          "SESLambdaVersionIKxqT3XjpINqmXx38FocDs0Ze9PwTTMn115OfVMZk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
@@ -311,7 +311,7 @@
                 "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"SESLambdaPermissionHttpApi\"][\"Properties\"][\"FunctionName\"]"
               },
               "PayloadFormatVersion": "2.0",
-              "TimeoutInMillis": 29000
+              "TimeoutInMillis": 20500
             }
           },
           "HttpApiRouteGet": {
@@ -420,7 +420,7 @@
           "SESLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SESLambdaVersionw8tsavjPRHttAQq7STANVZD1PiB49NzehfXqlZy73s"
+              "Ref": "SESLambdaVersionIKxqT3XjpINqmXx38FocDs0Ze9PwTTMn115OfVMZk"
             },
             "Export": {
               "Name": "sls-lamda-practice-dev-SESLambdaFunctionQualifiedArn"
@@ -559,7 +559,7 @@
     "functions": {
       "SES": {
         "handler": "handler.SES",
-        "timeout": 30,
+        "timeout": 20,
         "memorySize": 128,
         "events": [
           {
@@ -577,7 +577,7 @@
         "memory": 128,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "SESLambdaVersionw8tsavjPRHttAQq7STANVZD1PiB49NzehfXqlZy73s"
+        "versionLogicalId": "SESLambdaVersionIKxqT3XjpINqmXx38FocDs0Ze9PwTTMn115OfVMZk"
       },
       "roundTwo": {
         "handler": "handler.roundTwo",
@@ -619,7 +619,7 @@
     "artifact": "/Users/brandon/code/lamda-practice/.serverless/lamda-practice.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/lamda-practice/dev/1626445475178-2021-07-16T14:24:35.178Z",
+    "artifactDirectoryName": "serverless/lamda-practice/dev/1626445618658-2021-07-16T14:26:58.658Z",
     "artifact": "lamda-practice.zip"
   }
 }

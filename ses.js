@@ -306,7 +306,7 @@ AWS.config.update({region: 'us-east-1'});
 
 function sendEmailToCustomer(customer_email) {
   // Create sendEmail params
-  var params = {
+  const params = {
     Destination: { /* required */
       CcAddresses: [
         'blamb888@gmail.com',
@@ -338,7 +338,7 @@ function sendEmailToCustomer(customer_email) {
     ],
   };
   // Create the promise and SES service object
-  var sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
+  const sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(params).promise();
   // Handle promise's fulfilled/rejected states
   sendPromise.then(
     function(data) {

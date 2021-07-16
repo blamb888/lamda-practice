@@ -5,7 +5,7 @@ const ses = new aws.SES();
 
 const {
   sendEmailToCustomer
-} = require('./ses2');
+} = require('./ses');
 
 module.exports.SES = async (event) => {
   // console.log("Sending Email to customer: ")

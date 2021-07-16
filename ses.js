@@ -312,7 +312,7 @@ function sendEmailToCustomer(customer_email) {
         /* more items */
       ],
       ToAddresses: [
-        customer_email,
+        'blamb888@gmail.com',
         /* more items */
       ]
     },
@@ -403,7 +403,7 @@ function sendEmailToCustomer(customer_email) {
 
 // sendEmailToCustomer("brandon@flagship.cc");
 
-module.exports = {
-  sendEmailToCustomer
-}
+// module.exports = {
+//   sendEmailToCustomer
+// }
 

@@ -25,15 +25,15 @@ module.exports.SES = async (event) => {
   };
 };
 
-// module.exports.roundTwo = async (event) => {
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify(
-//       {
-//         message: 'This is my first AWS lambda function written in Nodejs.',
-//       },
-//       null,
-//       2
-//     ),
-//   };
-// };
+module.exports.roundTwo = async (event) => {
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'This is my first AWS lambda function written in Nodejs.',
+      },
+      null,
+      2
+    ),
+  };
+};

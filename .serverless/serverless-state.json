@@ -1,14 +1,14 @@
 {
   "service": {
-    "service": "lamda-practice",
+    "service": "email-service",
     "serviceObject": {
-      "name": "lamda-practice"
+      "name": "email-service"
     },
     "provider": {
       "name": "aws",
       "runtime": "nodejs12.x",
       "lambdaHashingVersion": "20201221",
-      "region": "us-east-1",
+      "region": "ap-northeast-1",
       "stage": "dev",
       "versionFunctions": true,
       "compiledCloudFormationTemplate": {
@@ -84,10 +84,10 @@
               }
             }
           },
-          "SESLogGroup": {
+          "SimpleEmailLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/lamda-practice-dev-SES"
+              "LogGroupName": "/aws/lambda/email-service-dev-simpleEmail"
             }
           },
           "IamRoleLambdaExecution": {
@@ -115,7 +115,7 @@
                     "Fn::Join": [
                       "-",
                       [
-                        "lamda-practice",
+                        "email-service",
                         "dev",
                         "lambda"
                       ]
@@ -132,7 +132,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/lamda-practice-dev*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/email-service-dev*:*"
                           }
                         ]
                       },
@@ -143,7 +143,7 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/lamda-practice-dev*:*:*"
+                            "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/email-service-dev*:*:*"
                           }
                         ]
                       }
@@ -156,7 +156,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "lamda-practice",
+                    "email-service",
                     "dev",
                     {
                       "Ref": "AWS::Region"
@@ -167,18 +167,18 @@
               }
             }
           },
-          "SESLambdaFunction": {
+          "SimpleEmailLambdaFunction": {
             "Type": "AWS::Lambda::Function",
             "Properties": {
               "Code": {
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/lamda-practice/dev/1626451647804-2021-07-16T16:07:27.804Z/lamda-practice.zip"
+                "S3Key": "serverless/email-service/dev/1626509548504-2021-07-17T08:12:28.504Z/email-service.zip"
               },
-              "Handler": "handler.SES",
+              "Handler": "handler.simpleEmail",
               "Runtime": "nodejs12.x",
-              "FunctionName": "lamda-practice-dev-SES",
+              "FunctionName": "email-service-dev-simpleEmail",
               "MemorySize": 1024,
               "Timeout": 6,
               "Role": {
@@ -189,23 +189,23 @@
               }
             },
             "DependsOn": [
-              "SESLogGroup"
+              "SimpleEmailLogGroup"
             ]
           },
-          "SESLambdaVersionagGT8E4O42JxUtxhhcyjPqxiJGuCugKgXKCyWjLNA": {
+          "SimpleEmailLambdaVersionYu7AVq1UN3GD5zrUFuincYa4MZNEbjLWchegpcy2dM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
-                "Ref": "SESLambdaFunction"
+                "Ref": "SimpleEmailLambdaFunction"
               },
-              "CodeSha256": "sTe1xnj0Isvu8I7kIKjhrJNGjhP0zqmPMsFfBepl7gY="
+              "CodeSha256": "P99PScw2aVdyGms6IgbYOh881spalUXcqVFCkKoBMxM="
             }
           },
           "HttpApi": {
             "Type": "AWS::ApiGatewayV2::Api",
             "Properties": {
-              "Name": "dev-lamda-practice",
+              "Name": "dev-email-service",
               "ProtocolType": "HTTP"
             }
           },
@@ -222,12 +222,12 @@
               }
             }
           },
-          "SESLambdaPermissionHttpApi": {
+          "SimpleEmailLambdaPermissionHttpApi": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
               "FunctionName": {
                 "Fn::GetAtt": [
-                  "SESLambdaFunction",
+                  "SimpleEmailLambdaFunction",
                   "Arn"
                 ]
               },
@@ -259,7 +259,7 @@
               }
             }
           },
-          "HttpApiIntegrationSES": {
+          "HttpApiIntegrationSimpleEmail": {
             "Type": "AWS::ApiGatewayV2::Integration",
             "Properties": {
               "ApiId": {
@@ -267,7 +267,7 @@
               },
               "IntegrationType": "AWS_PROXY",
               "IntegrationUri": {
-                "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"SESLambdaPermissionHttpApi\"][\"Properties\"][\"FunctionName\"]"
+                "$ref": "$[\"service\"][\"provider\"][\"compiledCloudFormationTemplate\"][\"Resources\"][\"SimpleEmailLambdaPermissionHttpApi\"][\"Properties\"][\"FunctionName\"]"
               },
               "PayloadFormatVersion": "2.0",
               "TimeoutInMillis": 6500
@@ -286,13 +286,13 @@
                   [
                     "integrations",
                     {
-                      "Ref": "HttpApiIntegrationSES"
+                      "Ref": "HttpApiIntegrationSimpleEmail"
                     }
                   ]
                 ]
               }
             },
-            "DependsOn": "HttpApiIntegrationSES"
+            "DependsOn": "HttpApiIntegrationSimpleEmail"
           }
         },
         "Outputs": {
@@ -301,16 +301,16 @@
               "Ref": "ServerlessDeploymentBucket"
             },
             "Export": {
-              "Name": "sls-lamda-practice-dev-ServerlessDeploymentBucketName"
+              "Name": "sls-email-service-dev-ServerlessDeploymentBucketName"
             }
           },
-          "SESLambdaFunctionQualifiedArn": {
+          "SimpleEmailLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "SESLambdaVersionagGT8E4O42JxUtxhhcyjPqxiJGuCugKgXKCyWjLNA"
+              "Ref": "SimpleEmailLambdaVersionYu7AVq1UN3GD5zrUFuincYa4MZNEbjLWchegpcy2dM"
             },
             "Export": {
-              "Name": "sls-lamda-practice-dev-SESLambdaFunctionQualifiedArn"
+              "Name": "sls-email-service-dev-SimpleEmailLambdaFunctionQualifiedArn"
             }
           },
           "HttpApiId": {
@@ -319,7 +319,7 @@
               "Ref": "HttpApi"
             },
             "Export": {
-              "Name": "sls-lamda-practice-dev-HttpApiId"
+              "Name": "sls-email-service-dev-HttpApiId"
             }
           },
           "HttpApiUrl": {
@@ -344,7 +344,7 @@
               ]
             },
             "Export": {
-              "Name": "sls-lamda-practice-dev-HttpApiUrl"
+              "Name": "sls-email-service-dev-HttpApiUrl"
             }
           }
         }
@@ -435,8 +435,8 @@
     },
     "pluginsData": {},
     "functions": {
-      "SES": {
-        "handler": "handler.SES",
+      "simpleEmail": {
+        "handler": "handler.simpleEmail",
         "events": [
           {
             "httpApi": {
@@ -447,13 +447,13 @@
             "resolvedPath": "/"
           }
         ],
-        "name": "lamda-practice-dev-SES",
+        "name": "email-service-dev-simpleEmail",
         "package": {},
         "memory": 1024,
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "SESLambdaVersionagGT8E4O42JxUtxhhcyjPqxiJGuCugKgXKCyWjLNA"
+        "versionLogicalId": "SimpleEmailLambdaVersionYu7AVq1UN3GD5zrUFuincYa4MZNEbjLWchegpcy2dM"
       }
     },
     "configValidationMode": "warn",
@@ -472,10 +472,10 @@
     },
     "layers": {},
     "isDashboardMonitoringPreconfigured": false,
-    "artifact": "/Users/brandon/code/lamda-practice/.serverless/lamda-practice.zip"
+    "artifact": "/Users/brandon/code/lamda-practice/.serverless/email-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/lamda-practice/dev/1626451647804-2021-07-16T16:07:27.804Z",
-    "artifact": "lamda-practice.zip"
+    "artifactDirectoryName": "serverless/email-service/dev/1626509548504-2021-07-17T08:12:28.504Z",
+    "artifact": "email-service.zip"
   }
 }

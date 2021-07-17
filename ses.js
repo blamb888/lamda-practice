@@ -1,7 +1,7 @@
 require('dotenv').config();
 const AWS = require('aws-sdk');
 const SES = new AWS.SES({apiVersion: '2010-12-01'});
-AWS.config.update({region: 'us-east-1'});
+AWS.config.update({region: 'ap-northeast-1'});
 
 
 const sendEmailToCustomer = async(customer_email) => {

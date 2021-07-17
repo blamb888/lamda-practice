@@ -1,14 +1,11 @@
 'use strict';
 require('dotenv').config();
-const AWS = require('aws-sdk');
-const SES = new AWS.SES({apiVersion: '2010-12-01'});
-AWS.config.update({region: 'us-east-1'});
 
 const {
   sendEmailToCustomer
 } = require('./ses');
 
-module.exports.SES = async (event) => {
+module.exports.simpleEmail = async (event) => {
   const simpleService = sendEmailToCustomer('brandon@flagship.cc');
 
   console.log("Simple service ran and returned this: " + simpleService);

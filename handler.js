@@ -1,15 +1,15 @@
 'use strict';
 require('dotenv').config();
-var aws = require("aws-sdk");
-var ses = new aws.SES({ region: "ap-northeast-1" });
+// var aws = require("aws-sdk");
+// var ses = new aws.SES({ region: "ap-northeast-1" });
 
-// const {
-//   sendEmailToCustomer
-// } = require('./ses');
+const {
+  sendEmailToCustomer
+} = require('./ses');
 
 module.exports.simpleEmail = async (event) => {
-  // console.log("Sending test email...");
-  // const simpleService = sendEmailToCustomer('brandon@flagship.cc');
+  console.log("Sending test email...");
+  return sendEmailToCustomer('brandon@flagship.cc');
   // console.log("Test email sent.");
 
 
@@ -25,22 +25,24 @@ module.exports.simpleEmail = async (event) => {
   //     }, null,2
   //   ),
   // };
-  var params = {
-    Destination: {
-      ToAddresses: ['brandon@flagship.cc'],
-    },
-    Message: {
-      Body: {
-        Text: { Data: "Test" },
-      },
-      Subject: { Data: "Test Email" },
-    },
-    Source: "blamb888@gmail.com",
-  };
 
-  return ses.sendEmail(params).promise()
+
+// THIS WORKS --->
+  // var params = {
+  //   Destination: {
+  //     ToAddresses: ['brandon@flagship.cc'],
+  //   },
+  //   Message: {
+  //     Body: {
+  //       Text: { Data: "Test" },
+  //     },
+  //     Subject: { Data: "Test Email" },
+  //   },
+  //   Source: "blamb888@gmail.com",
+  // };
+
+  // return ses.sendEmail(params).promise()
 };
-
 // module.exports.roundTwo = async (event) => {
 //   return {
 //     statusCode: 200,

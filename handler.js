@@ -9,7 +9,7 @@ const {
 
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");
-  return sendEmailToCustomer('brandon@flagship.cc');
+  return sendEmailToCustomer('brandon@flagship.cc')
   // console.log("Test email sent.");
 
 
@@ -43,15 +43,4 @@ module.exports.simpleEmail = async (event) => {
 
   // return ses.sendEmail(params).promise()
 };
-// module.exports.roundTwo = async (event) => {
-//   return {
-//     statusCode: 200,
-//     body: JSON.stringify(
-//       {
-//         message: 'This is my first AWS lambda function written in Nodejs.',
-//       },
-//       null,
-//       2
-//     ),
-//   };
-// };
+

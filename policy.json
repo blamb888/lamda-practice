@@ -19,6 +19,14 @@
                 "arn:aws:logs:us-east-1:050404433262:log-group:/aws/lambda/lamda-practice-dev*:*:*"
             ],
             "Effect": "Allow"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ses:SendEmail",
+                "ses:SendRawEmail"
+            ],
+            "Resource": "*"
         }
     ]
 }

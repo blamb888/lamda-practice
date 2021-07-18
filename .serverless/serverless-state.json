@@ -174,7 +174,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/email-service/dev/1626509548504-2021-07-17T08:12:28.504Z/email-service.zip"
+                "S3Key": "serverless/email-service/dev/1626519796571-2021-07-17T11:03:16.571Z/email-service.zip"
               },
               "Handler": "handler.simpleEmail",
               "Runtime": "nodejs12.x",
@@ -475,7 +475,7 @@
     "artifact": "/Users/brandon/code/lamda-practice/.serverless/email-service.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/email-service/dev/1626509548504-2021-07-17T08:12:28.504Z",
+    "artifactDirectoryName": "serverless/email-service/dev/1626519796571-2021-07-17T11:03:16.571Z",
     "artifact": "email-service.zip"
   }
 }

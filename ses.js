@@ -38,15 +38,15 @@ const sendEmailToCustomer = async(customer_email) => {
     console.log(emailParams)
 
     const sendPromise = new AWS.SES({apiVersion: '2010-12-01'}).sendEmail(emailParams).promise();
-    console.log(sendPromise);
 
     sendPromise.then(
       function(data) {
         console.log(data.MessageId);
       }).catch(
         function(err) {
-        console.error(err, err.stack);
-      });
+          console.error(err, err.stack);
+        });
+    console.log(sendPromise);
     }
 
 // sendEmailToCustomer('brandon@flagship.cc');

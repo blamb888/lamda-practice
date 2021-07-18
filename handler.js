@@ -6,7 +6,10 @@ const {
 } = require('./ses');
 
 module.exports.simpleEmail = async (event) => {
+  console.log("Sending test email...");
   const simpleService = sendEmailToCustomer('brandon@flagship.cc');
+  console.log("Test email sent.");
+
 
   console.log("Simple service ran and returned this: " + simpleService);
   console.log("This was the event: " + event);

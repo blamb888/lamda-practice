@@ -9,22 +9,22 @@ const {
 
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");
-  return sendEmailToCustomer('brandon@flagship.cc')
   // console.log("Test email sent.");
 
 
   // console.log("Simple service ran and returned this: " + simpleService);
   // console.log("This was the event: " + event);
 
-  // return {
-  //   statusCode: 200,
-  //   headers: { "Access-Control-Allow-Origin": "*" },
-  //   body: JSON.stringify(
-  //     {
-  //       message: 'Hopefully this sent an email',
-  //     }, null,2
-  //   ),
-  // };
+  return {
+    statusCode: 200,
+    headers: { "Access-Control-Allow-Origin": "*" },
+    body: JSON.stringify(
+      {
+        data: sendEmailToCustomer('brandon@flagship.cc'),
+        message: 'Hopefully this sent an email',
+      }, null,2
+    ),
+  };
 
 
 // THIS WORKS --->

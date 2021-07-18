@@ -1,17 +1,25 @@
-var aws = require("aws-sdk");
-var ses = new aws.SES({ region: "ap-northeast-1" });
+const aws = require("aws-sdk");
+const ses = new aws.SES({ region: "ap-northeast-1" });
 
 const sendEmailToCustomer = async(customer_email) => {
+
+  const email_template = "<h1>Hello there!</h1>";
 // THIS WORKS --->
-  var params = {
+  const params = {
     Destination: {
       ToAddresses: [customer_email],
     },
     Message: {
       Body: {
-        Text: { Data: "Test" },
+        Html: {
+          Charset: 'UTF-8',
+          Data: `${email_template}`
+        },
       },
-      Subject: { Data: "Test Email" },
+      Subject: {
+        Charset: 'UTF-8',
+        Data: 'メール配信停止のご依頼を承りました'
+      },
     },
     Source: "blamb888@gmail.com",
   };

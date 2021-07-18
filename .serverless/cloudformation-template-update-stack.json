@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/email-service/dev/1626519796571-2021-07-17T11:03:16.571Z/email-service.zip"
+          "S3Key": "serverless/email-service/dev/1626585668281-2021-07-18T05:21:08.281Z/email-service.zip"
         },
         "Handler": "handler.simpleEmail",
         "Runtime": "nodejs12.x",
@@ -179,14 +179,14 @@
         "SimpleEmailLogGroup"
       ]
     },
-    "SimpleEmailLambdaVersionYu7AVq1UN3GD5zrUFuincYa4MZNEbjLWchegpcy2dM": {
+    "SimpleEmailLambdaVersionqKChucjQ8XNeQJSeqfaMZ5SnEPblqURPPEGByQVe8wg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "SimpleEmailLambdaFunction"
         },
-        "CodeSha256": "P99PScw2aVdyGms6IgbYOh881spalUXcqVFCkKoBMxM="
+        "CodeSha256": "QgBCgR6kKI1TYFwK39W6KJIfJBbJOFrWeKVmPTaRr4s="
       }
     },
     "HttpApi": {
@@ -297,7 +297,7 @@
     "SimpleEmailLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "SimpleEmailLambdaVersionYu7AVq1UN3GD5zrUFuincYa4MZNEbjLWchegpcy2dM"
+        "Ref": "SimpleEmailLambdaVersionqKChucjQ8XNeQJSeqfaMZ5SnEPblqURPPEGByQVe8wg"
       },
       "Export": {
         "Name": "sls-email-service-dev-SimpleEmailLambdaFunctionQualifiedArn"

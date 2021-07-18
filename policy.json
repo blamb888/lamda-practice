@@ -21,12 +21,11 @@
             "Effect": "Allow"
         },
         {
-            "Effect": "Allow",
             "Action": [
-                "ses:SendEmail",
-                "ses:SendRawEmail"
+              "ses:*"
             ],
-            "Resource": "*"
+            "Resource": "*",
+            "Effect": "Allow"
         }
     ]
 }

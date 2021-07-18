@@ -1,7 +1,5 @@
 'use strict';
 require('dotenv').config();
-// var aws = require("aws-sdk");
-// var ses = new aws.SES({ region: "ap-northeast-1" });
 
 const {
   sendEmailToCustomer
@@ -9,12 +7,7 @@ const {
 
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");
-  // console.log("Test email sent.");
   const email = await sendEmailToCustomer('brandon@flagship.cc')
-
-
-  // console.log("Simple service ran and returned this: " + simpleService);
-  // console.log("This was the event: " + event);
 
   return {
     statusCode: 200,
@@ -26,22 +19,5 @@ module.exports.simpleEmail = async (event) => {
       }, null,2
     ),
   };
-
-
-// THIS WORKS --->
-  // var params = {
-  //   Destination: {
-  //     ToAddresses: ['brandon@flagship.cc'],
-  //   },
-  //   Message: {
-  //     Body: {
-  //       Text: { Data: "Test" },
-  //     },
-  //     Subject: { Data: "Test Email" },
-  //   },
-  //   Source: "blamb888@gmail.com",
-  // };
-
-  // return ses.sendEmail(params).promise()
 };
 

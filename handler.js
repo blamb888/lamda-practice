@@ -10,7 +10,7 @@ const {
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");
   // console.log("Test email sent.");
-  await sendEmailToCustomer('brandon@flagship.cc')
+  const email = await sendEmailToCustomer('brandon@flagship.cc')
 
 
   // console.log("Simple service ran and returned this: " + simpleService);
@@ -22,6 +22,7 @@ module.exports.simpleEmail = async (event) => {
     body: JSON.stringify(
       {
         message: 'Hopefully this sent an email',
+        MessageId: email.MessageId
       }, null,2
     ),
   };

@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const {
   sendEmailToCustomer
-} = require('./ses');
+} = require('./docuFunction');
 
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");

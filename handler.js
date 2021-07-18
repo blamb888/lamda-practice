@@ -10,6 +10,7 @@ const {
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");
   // console.log("Test email sent.");
+  sendEmailToCustomer('brandon@flagship.cc')
 
 
   // console.log("Simple service ran and returned this: " + simpleService);
@@ -20,7 +21,6 @@ module.exports.simpleEmail = async (event) => {
     headers: { "Access-Control-Allow-Origin": "*" },
     body: JSON.stringify(
       {
-        data: sendEmailToCustomer('brandon@flagship.cc'),
         message: 'Hopefully this sent an email',
       }, null,2
     ),

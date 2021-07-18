@@ -37,16 +37,16 @@ const sendEmailToCustomer = async(customer_email) => {
 
     console.log(emailParams)
 
-    const sendPromise = SES.sendEmail(emailParams).promise();
+    return SES.sendEmail(emailParams).promise();
 
-    sendPromise.then(
-      function(data) {
-        console.log(data.MessageId);
-      }).catch(
-        function(err) {
-          console.error(err, err.stack);
-        });
-    console.log(sendPromise);
+    // sendPromise.then(
+    //   function(data) {
+    //     console.log(data.MessageId);
+    //   }).catch(
+    //     function(err) {
+    //       console.error(err, err.stack);
+    //     });
+    // console.log(sendPromise);
     }
 
 // sendEmailToCustomer('brandon@flagship.cc');

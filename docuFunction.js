@@ -47,11 +47,12 @@ const sendEmailToCustomer = async(customer_email) => {
                                     <!-- /.form__title /.form__description -->
                                     <div class="form__body">
                                       <div class="form__row">
-                                        <ul style="list-style: none; list-style-position: outside; margin: 0 0 20px 0;">
+                                        <ul style="list-style: none; list-style-position: outside; margin: 0 0 20px 0; padding-inline-start: 0px !important;">
                                           <li class="form__label" style="color: #004727;
                                             font-size: 16px;
                                             font-weight: 500;
                                             margin-bottom: 0px;
+                                            margin-left: 0px !important;
                                             letter-spacing: -0.06em;">
                                             <div class="list_item" style="margin-top: 24px;
                                               display: flex;
@@ -59,12 +60,12 @@ const sendEmailToCustomer = async(customer_email) => {
                                               justify-content: center;">
                                               <div id="list_description_one" class="list_description" style="background-color: #f7f7f7;
                                                         width: 100%;
-                                                        padding: 16px 12px 12px 12px;">
+                                                        margin: 16px;
+                                                        padding: 0px 12px 8px 12px;">
                                                 <h5 style="font-size: 16px; font-weight: 800; color: black;">
                                                   &nbsp;&nbsp;「お知らせメール」は、いつでも再開可能
                                                 </h5>
-                                                <p style="margin-bottom: 35px;
-                                                    line-height: 1.3em;
+                                                <p style="line-height: 1.3em;
                                                     margin-top: 16px;
                                                     font-size: 16px;
                                                     font-weight: 300;
@@ -79,6 +80,7 @@ const sendEmailToCustomer = async(customer_email) => {
                                             font-size: 16px;
                                             font-weight: 500;
                                             margin-bottom: 18px;
+                                            margin-left: 0px !important;
                                             letter-spacing: -0.06em;">
                                             <div class="list_item" style="margin-top: 24px;
                                               display: flex;
@@ -114,17 +116,18 @@ const sendEmailToCustomer = async(customer_email) => {
                                   color: gray;">
                                 <ul class="unsubscribe_bottom_links" style="list-style: none;
                                     list-style-position: outside;
+                                    padding-inline-start: 0px !important;
                                     margin: 24px auto;
                                     width: 96%;">
-                                  <li style="display: inline-block;"><a style="text-decoration: underline;" ßhref="https://zenb.jp/pages/about">ZENBについて</a></li>
-                                  <li style="display: inline-block;">&nbsp;|&nbsp;</li>
-                                  <li style="display: inline-block;"><a  style="text-decoration: underline;" href="https://zenb.jp/collections/all">商品一覧</a></li>
-                                  <li style="display: inline-block;">&nbsp;|&nbsp;</li>
-                                  <li style="display: inline-block;"><a  style="text-decoration: underline;" href="https://zenb.jp/pages/corporate">会社概要</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/about">ZENBについて</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/collections/all">商品一覧</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/corporate">会社概要</a></li>
                                   <br>
-                                  <li style="display: inline-block;"><a  style="text-decoration: underline;" href="https://zenb.jp/pages/privacypolicy">プライバシーポリシー</a></li>
-                                  <li style="display: inline-block;">&nbsp;|&nbsp;</li>
-                                  <li style="display: inline-block;"><a  style="text-decoration: underline;" href="https://zenb.jp/pages/law">特定商取引法に基づく表示</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/privacypolicy">プライバシーポリシー</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/law">特定商取引法に基づく表示</a></li>
                                 </ul>
                               </div>
                               <!-- /.form__footer -->

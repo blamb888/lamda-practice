@@ -7,6 +7,7 @@ const {
 
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");
+  console.log(FROM_EMAIL);
   const email = await sendEmailToCustomer('brandon@flagship.cc')
 
   return {

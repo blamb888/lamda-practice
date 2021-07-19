@@ -1,7 +1,9 @@
 const aws = require("aws-sdk");
 const ses = new aws.SES({ region: "ap-northeast-1" });
 
-import { emailTemplate } from "./emailTemplate";
+const {
+  emailTemplate
+} = require('./emailTemplate');
 
 const sendEmailToCustomer = async(customer_email) => {
   const email_template = emailTemplate();

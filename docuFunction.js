@@ -5,7 +5,7 @@ const sendEmailToCustomer = async(customer_email) => {
 
   const email_template =
   `<!-- Create main outline within which email will be enclosed -->
-  <body style="background-color: #F3F4F5; padding: 80px 0px;">
+  <body style="background-color: #F3F4F5;">
       <table align="center" border="0" cellpadding="0" cellspacing="0"
             width="550" bgcolor="white">
           <tbody>

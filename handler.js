@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const {
   sendEmailToCustomer
-} = require('./docuFunction');
+} = require('./helpers/docuFunction');
 
 module.exports.simpleEmail = async (event) => {
   console.log("Sending test email...");

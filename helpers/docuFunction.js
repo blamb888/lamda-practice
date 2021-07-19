@@ -9,6 +9,7 @@ const {
 
 const sendEmailToCustomer = async(customer_email) => {
   const FROM_EMAIL = process.env.SES_FROM_EMAIL_ADDRESS;
+  // const FROM_EMAIL = 'blamb888@gmail.com';
   console.log(FROM_EMAIL);
   const EMAIL_TEMPLATE = emailTemplate();
   const SUBJECT = 'メール配信停止のご依頼を承りました';
@@ -39,3 +40,5 @@ const sendEmailToCustomer = async(customer_email) => {
 module.exports = {
   sendEmailToCustomer
 }
+
+// sendEmailToCustomer('brandon+from@flagship.cc');

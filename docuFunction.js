@@ -1,3 +1,5 @@
+'use strict';
+require('dotenv').config();
 const aws = require("aws-sdk");
 const ses = new aws.SES({ region: "ap-northeast-1" });
 
@@ -6,7 +8,10 @@ const {
 } = require('./emailTemplate');
 
 const sendEmailToCustomer = async(customer_email) => {
-  const email_template = emailTemplate();
+  const FROM_EMAIL = process.env.SES_FROM_EMAIL_ADDRESS;
+  const EMAIL_TEMPLATE = emailTemplate();
+  const SUBJECT = 'メール配信停止のご依頼を承りました';
+  const CHARSET = 'UTF-8';
 // THIS WORKS --->
   const params = {
     Destination: {
@@ -15,16 +20,16 @@ const sendEmailToCustomer = async(customer_email) => {
     Message: {
       Body: {
         Html: {
-          Charset: 'UTF-8',
-          Data: `${email_template}`
+          Charset: `${CHARSET}`,
+          Data: `${EMAIL_TEMPLATE}`
         },
       },
       Subject: {
-        Charset: 'UTF-8',
-        Data: 'メール配信停止のご依頼を承りました'
+        Charset: `${CHARSET}`,
+        Data: `${SUBJECT}`
       },
     },
-    Source: "blamb888@gmail.com",
+    Source: `${FROM_EMAIL}`,
   };
 
   return ses.sendEmail(params).promise()

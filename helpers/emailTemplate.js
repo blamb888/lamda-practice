@@ -57,8 +57,8 @@ function emailTemplate() {
                                                 <div id="list_description_one" class="list_description" style="background-color: #f7f7f7;
                                                           width: 100%;
                                                           margin: 16px;
-                                                          padding: 0px 12px 8px 12px;">
-                                                  <h5 style="font-size: 16px; font-weight: 800; color: black;">
+                                                          padding: 20px 12px 8px 12px;">
+                                                  <h5 style="font-size: 16px; font-weight: 800; color: black; margin: 0px !important">
                                                     &nbsp;&nbsp;「お知らせメール」は、いつでも再開可能
                                                   </h5>
                                                   <p style="line-height: 1.3em;
@@ -114,15 +114,15 @@ function emailTemplate() {
                                       padding: 0px !important;
                                       margin: 24px auto;
                                       width: 96%;">
-                                    <li style="display: inline-block; margin-left: 0px !important;"><a style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/about">ZENBについて</a></li>
-                                    <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
-                                    <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/collections/all">商品一覧</a></li>
-                                    <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
-                                    <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/corporate">会社概要</a></li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;"><a style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/about">ZENBについて</a></li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/collections/all">商品一覧</a></li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/corporate">会社概要</a></li>
                                     <br>
-                                    <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/privacypolicy">プライバシーポリシー</a></li>
-                                    <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
-                                    <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/law">特定商取引法に基づく表示</a></li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/privacypolicy">プライバシーポリシー</a></li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
+                                    <li style="font-size: 16px; display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/law">特定商取引法に基づく表示</a></li>
                                   </ul>
                                 </div>
                                 <!-- /.form__footer -->

@@ -83,10 +83,9 @@ function emailTemplate() {
                                                 align-items: center;
                                                 justify-content: center;">
                                                 <div class="list_description" style="width: 100%; padding: 16px 12px 12px 12px;">
-                                                  <a style="text-decoration: underline;"  href="https://zenb.jp">
+                                                  <a style="text-decoration: underline; color: #000000 !important;"  href="https://zenb.jp">
                                                     <h6 style="font-size: 18px;
                                                       font-weight: 300;
-                                                      color: black !important;
                                                       line-height: 1.6rem;">
                                                         ZENBのTOPページを見る
                                                     </h6>

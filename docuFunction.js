@@ -47,7 +47,7 @@ const sendEmailToCustomer = async(customer_email) => {
                                     <!-- /.form__title /.form__description -->
                                     <div class="form__body">
                                       <div class="form__row">
-                                        <ul style="list-style: none; list-style-position: outside; margin: 0 0 20px 0; padding-inline-start: 0px !important;">
+                                        <ul style="list-style: none; list-style-position: outside; margin: 0 0 20px 0; padding: 0px !important;">
                                           <li class="form__label" style="color: #004727;
                                             font-size: 16px;
                                             font-weight: 500;
@@ -116,7 +116,7 @@ const sendEmailToCustomer = async(customer_email) => {
                                   color: gray;">
                                 <ul class="unsubscribe_bottom_links" style="list-style: none;
                                     list-style-position: outside;
-                                    padding-inline-start: 0px !important;
+                                    padding: 0px !important;
                                     margin: 24px auto;
                                     width: 96%;">
                                   <li style="display: inline-block; margin-left: 0px !important;"><a style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/about">ZENBについて</a></li>

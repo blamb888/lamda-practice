@@ -5,9 +5,9 @@ const sendEmailToCustomer = async(customer_email) => {
 
   const email_template =
   `<!-- Create main outline within which email will be enclosed -->
-  <body style="background-color:grey">
+  <body style="background-color: #F3F4F5; padding: 80px 0px;">
       <table align="center" border="0" cellpadding="0" cellspacing="0"
-            width="550" bgcolor="white" style="border: 1px solid gray">
+            width="550" bgcolor="white">
           <tbody>
               <tr>
                   <td align="center">
@@ -42,7 +42,7 @@ const sendEmailToCustomer = async(customer_email) => {
                                       color: #777;
                                       text-align: center;
                                       letter-spacing: .1em;">
-                                      システムにリクエストが処理されるまでに時間がかかる場合がございます。3～4日たってもメールが届く場合には、<a style="text-decoration: underline;"  href="https://support.zenb.jp/hc/ja/requests/new">ZENBお客様センター</a>までお問い合わせください。
+                                      システムにリクエストが処理されるまでに時間がかかる場合がございます。3～4日たってもメールが届く場合には、<a style="text-decoration: underline; color: #000000 !important;"  href="https://support.zenb.jp/hc/ja/requests/new">ZENBお客様センター</a>までお問い合わせください。
                                     </p>
                                     <!-- /.form__title /.form__description -->
                                     <div class="form__body">
@@ -71,7 +71,7 @@ const sendEmailToCustomer = async(customer_email) => {
                                                     font-weight: 300;
                                                     color: black;
                                                     text-align: left;">
-                                                  再開ご希望の場合は、<a style="text-decoration: underline;"  href="https://zenb.jp/account/login?return_url=%2Faccount">「マイアカウント」画面より</a>お知らせメールの設定を変更するだけです。
+                                                  再開ご希望の場合は、<a style="text-decoration: underline; color: #000000 !important;"  href="https://zenb.jp/account/login?return_url=%2Faccount">「マイアカウント」画面より</a>お知らせメールの設定を変更するだけです。
                                                 </p>
                                               </div>
                                             </div>
@@ -119,15 +119,15 @@ const sendEmailToCustomer = async(customer_email) => {
                                     padding-inline-start: 0px !important;
                                     margin: 24px auto;
                                     width: 96%;">
-                                  <li style="display: inline-block; margin-left: 0px !important;"><a style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/about">ZENBについて</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/about">ZENBについて</a></li>
                                   <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
-                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/collections/all">商品一覧</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/collections/all">商品一覧</a></li>
                                   <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
-                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/corporate">会社概要</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/corporate">会社概要</a></li>
                                   <br>
-                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/privacypolicy">プライバシーポリシー</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/privacypolicy">プライバシーポリシー</a></li>
                                   <li style="display: inline-block; margin-left: 0px !important;">&nbsp;|&nbsp;</li>
-                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #F7F7F7!important;" href="https://zenb.jp/pages/law">特定商取引法に基づく表示</a></li>
+                                  <li style="display: inline-block; margin-left: 0px !important;"><a  style="text-decoration: underline; color: #000000 !important;" href="https://zenb.jp/pages/law">特定商取引法に基づく表示</a></li>
                                 </ul>
                               </div>
                               <!-- /.form__footer -->
